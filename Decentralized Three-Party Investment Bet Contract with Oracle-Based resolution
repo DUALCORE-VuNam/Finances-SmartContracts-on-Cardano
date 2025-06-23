@@ -1,0 +1,409 @@
+When
+    [Case
+        (Deposit
+            (Role "B")
+            (Role "B")
+            (Token "" "")
+            (MulValue
+                (ConstantParam "SoluongADA")
+                (Constant 1000000)
+            )
+        )
+        (When
+            [Case
+                (Deposit
+                    (Role "C")
+                    (Role "C")
+                    (Token "" "")
+                    (MulValue
+                        (ConstantParam "SoluongADA")
+                        (Constant 1000000)
+                    )
+                )
+                (When
+                    [Case
+                        (Deposit
+                            (Role "D")
+                            (Role "D")
+                            (Token "" "")
+                            (MulValue
+                                (ConstantParam "SoluongADA")
+                                (Constant 1000000)
+                            )
+                        )
+                        (When
+                            [Case
+                                (Choice
+                                    (ChoiceId
+                                        "B Chon"
+                                        (Role "B")
+                                    )
+                                    [Bound 1 1000000000000]
+                                )
+                                (When
+                                    [Case
+                                        (Choice
+                                            (ChoiceId
+                                                "C Chon"
+                                                (Role "C")
+                                            )
+                                            [Bound 1 1000000000000]
+                                        )
+                                        (When
+                                            [Case
+                                                (Choice
+                                                    (ChoiceId
+                                                        "D Chon"
+                                                        (Role "D")
+                                                    )
+                                                    [Bound 1 1000000000000]
+                                                )
+                                                (When
+                                                    []
+                                                    (TimeParam "Thoigiandoiketqua")
+                                                    (When
+                                                        [Case
+                                                            (Choice
+                                                                (ChoiceId
+                                                                    "Oracle"
+                                                                    (Role "Pricemarket")
+                                                                )
+                                                                [Bound 1 1000000000000]
+                                                            )
+                                                            (If
+                                                                (ValueGE
+                                                                    (Cond
+                                                                        (ValueGE
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "C Chon"
+                                                                                    (Role "C")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                        )
+                                                                        (SubValue
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "C Chon"
+                                                                                    (Role "C")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                        )
+                                                                        (SubValue
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "C Chon"
+                                                                                    (Role "C")
+                                                                                ))
+                                                                        )
+                                                                    )
+                                                                    (Cond
+                                                                        (ValueGE
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "B Chon"
+                                                                                    (Role "B")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                        )
+                                                                        (SubValue
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "B Chon"
+                                                                                    (Role "B")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                        )
+                                                                        (SubValue
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "Oracle"
+                                                                                    (Role "Pricemarket")
+                                                                                ))
+                                                                            (ChoiceValue
+                                                                                (ChoiceId
+                                                                                    "B Chon"
+                                                                                    (Role "B")
+                                                                                ))
+                                                                        )
+                                                                    )
+                                                                )
+                                                                (If
+                                                                    (ValueGE
+                                                                        (Cond
+                                                                            (ValueGE
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                            )
+                                                                        )
+                                                                        (Cond
+                                                                            (ValueGE
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "B Chon"
+                                                                                        (Role "B")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "B Chon"
+                                                                                        (Role "B")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "B Chon"
+                                                                                        (Role "B")
+                                                                                    ))
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                    (Pay
+                                                                        (Role "C")
+                                                                        (Party (Role "B"))
+                                                                        (Token "" "")
+                                                                        (MulValue
+                                                                            (ConstantParam "SoluongADA")
+                                                                            (Constant 1000000)
+                                                                        )
+                                                                        (Pay
+                                                                            (Role "D")
+                                                                            (Party (Role "B"))
+                                                                            (Token "" "")
+                                                                            (MulValue
+                                                                                (ConstantParam "SoluongADA")
+                                                                                (Constant 1000000)
+                                                                            )
+                                                                            Close 
+                                                                        )
+                                                                    )
+                                                                    (Pay
+                                                                        (Role "B")
+                                                                        (Party (Role "D"))
+                                                                        (Token "" "")
+                                                                        (MulValue
+                                                                            (ConstantParam "SoluongADA")
+                                                                            (Constant 1000000)
+                                                                        )
+                                                                        (Pay
+                                                                            (Role "C")
+                                                                            (Party (Role "D"))
+                                                                            (Token "" "")
+                                                                            (MulValue
+                                                                                (ConstantParam "SoluongADA")
+                                                                                (Constant 1000000)
+                                                                            )
+                                                                            Close 
+                                                                        )
+                                                                    )
+                                                                )
+                                                                (If
+                                                                    (ValueGE
+                                                                        (Cond
+                                                                            (ValueGE
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "D Chon"
+                                                                                        (Role "D")
+                                                                                    ))
+                                                                            )
+                                                                        )
+                                                                        (Cond
+                                                                            (ValueGE
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "C Chon"
+                                                                                        (Role "C")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "C Chon"
+                                                                                        (Role "C")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                            )
+                                                                            (SubValue
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "Oracle"
+                                                                                        (Role "Pricemarket")
+                                                                                    ))
+                                                                                (ChoiceValue
+                                                                                    (ChoiceId
+                                                                                        "C Chon"
+                                                                                        (Role "C")
+                                                                                    ))
+                                                                            )
+                                                                        )
+                                                                    )
+                                                                    (Pay
+                                                                        (Role "D")
+                                                                        (Party (Role "C"))
+                                                                        (Token "" "")
+                                                                        (MulValue
+                                                                            (ConstantParam "SoluongADA")
+                                                                            (Constant 1000000)
+                                                                        )
+                                                                        (Pay
+                                                                            (Role "B")
+                                                                            (Party (Role "C"))
+                                                                            (Token "" "")
+                                                                            (MulValue
+                                                                                (ConstantParam "SoluongADA")
+                                                                                (Constant 1000000)
+                                                                            )
+                                                                            Close 
+                                                                        )
+                                                                    )
+                                                                    (Pay
+                                                                        (Role "C")
+                                                                        (Party (Role "D"))
+                                                                        (Token "" "")
+                                                                        (MulValue
+                                                                            (ConstantParam "SoluongADA")
+                                                                            (Constant 1000000)
+                                                                        )
+                                                                        (Pay
+                                                                            (Role "B")
+                                                                            (Party (Role "D"))
+                                                                            (Token "" "")
+                                                                            (MulValue
+                                                                                (ConstantParam "SoluongADA")
+                                                                                (Constant 1000000)
+                                                                            )
+                                                                            Close 
+                                                                        )
+                                                                    )
+                                                                )
+                                                            )]
+                                                        (TimeParam "ThoiGianLayGiaMarket")
+                                                        Close 
+                                                    )
+                                                )]
+                                            (TimeParam "ThoiGianDChon")
+                                            Close 
+                                        )]
+                                    (TimeParam "ThoiGianCChon")
+                                    Close 
+                                )]
+                            (TimeParam "ThoiGianBChon")
+                            Close 
+                        )]
+                    (TimeParam "ThoiHanDnoptien")
+                    Close 
+                )]
+            (TimeParam "ThoiHanCnoptien")
+            Close 
+        )]
+    (TimeParam "ThoiHanBnoptien")
+    Close 
